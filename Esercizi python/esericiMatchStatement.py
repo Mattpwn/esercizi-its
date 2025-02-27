@@ -92,3 +92,52 @@
 
 #   ESERCIZIO 5
 
+
+# oggetti : list = []
+
+# for i in range (3):
+#     lista: str = input(f"Inserisci oggetti: ")
+#     oggetti.append(lista)
+
+# match oggetti:
+    
+#     case ["Computer, Telefono, Tablet"]:
+#         print("Dispositivi  elettronici")
+    
+#     case ["penna", "matita", "quaderno"]:
+#         print("Materiale scolastico")
+
+#     case ["pane", "latte", "uova"]:
+#         print("Prodotti alimentari")
+
+#     case ["sedia", "tavolo", "armadio"]:
+#         print("Mobili")
+
+#     case _:
+#         print("Categoria sconosciuta")
+
+
+# ESERCIZIO 6
+
+mammiferi : list = []
+rettili : list = []
+uccelli : list = []
+pesci : list = []
+
+nome_animale : str = str(input(" Inserisci un animale "))
+
+match nome_animale:
+    case "cane"|"gatto"|"cavallo"|"elefante"|"leone":
+        print(f"{nome_animale} appartiene alla categoria dei mammiferi")
+
+    case "serpente"|"lucertola"| "tartaruga"| "coccodrillo.":
+        print(f" {nome_animale} appartiene alla classe dei rettili")
+
+    case "aquila"| "pappagallo"| "gufo"| "falco":
+        print(f" {nome_animale} appartiene alla categoria uccelli ")
+
+    case "squalo"| "trota"| "salmone" | "carpa":
+        print(f" {nome_animale} appartiene alla categoria pesci")
+
+    case _:
+        print(f" Non so dire di che categoria sia {nome_animale}")
