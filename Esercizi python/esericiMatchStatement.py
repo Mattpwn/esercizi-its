@@ -119,25 +119,103 @@
 
 # ESERCIZIO 6
 
-mammiferi : list = []
-rettili : list = []
-uccelli : list = []
-pesci : list = []
+# mammiferi : list = []
+# rettili : list = []
+# uccelli : list = []
+# pesci : list = []
 
-nome_animale : str = str(input(" Inserisci un animale "))
+# nome_animale : str = str(input(" Inserisci un animale "))
 
-match nome_animale:
-    case "cane"|"gatto"|"cavallo"|"elefante"|"leone":
-        print(f"{nome_animale} appartiene alla categoria dei mammiferi")
+# match nome_animale:
+#     case "cane"|"gatto"|"cavallo"|"elefante"|"leone":
+#         print(f"{nome_animale} appartiene alla categoria dei mammiferi")
 
-    case "serpente"|"lucertola"| "tartaruga"| "coccodrillo.":
-        print(f" {nome_animale} appartiene alla classe dei rettili")
+#     case "serpente"|"lucertola"| "tartaruga"| "coccodrillo.":
+#         print(f" {nome_animale} appartiene alla classe dei rettili")
 
-    case "aquila"| "pappagallo"| "gufo"| "falco":
-        print(f" {nome_animale} appartiene alla categoria uccelli ")
+#     case "aquila"| "pappagallo"| "gufo"| "falco":
+#         print(f" {nome_animale} appartiene alla categoria uccelli ")
 
-    case "squalo"| "trota"| "salmone" | "carpa":
-        print(f" {nome_animale} appartiene alla categoria pesci")
+#     case "squalo"| "trota"| "salmone" | "carpa":
+#         print(f" {nome_animale} appartiene alla categoria pesci")
 
-    case _:
-        print(f" Non so dire di che categoria sia {nome_animale}")
+#     case _:
+#         print(f" Non so dire di che categoria sia {nome_animale}")
+
+# ESERCIZIO 7
+
+# ruoli : dict [str , int ] = {"nome": input("Inserisci nome utente: ") , "ruolo": input("Inserire il ruolo dell'utente: ") , "età" : int (input("Inserire età dell'utente: "))}
+
+# match ruoli:
+
+#     case {"nome" : name, "ruolo" : "Admin"}:
+#         print("Accesso completo a tutte le funzionalità")
+
+#     case {"nome" : name, "ruolo" : "Moderatore"}:
+#         print("Può gestire i contenuti ma non modificare le impostazioni")
+
+#     case {"nome" : name, "ruolo" : "Adulto", "età" : età} if età >= 18:
+#         print("Accesso standard a tutti i servizi")
+
+#     case {"nome" : name, "ruolo" : "Minorenne", "età" : età} if età < 18:
+#         print("Accesso limitato! Alcune funzionalità sono bloccate")
+
+#     case {"nome" : nome, "ruolo" : "Ospite"}:
+#         print("Accesso ristretto! Solo visualizzazione dei contenuti")
+
+#     case _:
+#         print("Attenzione! Ruolo non riconsciuto! Accesso Negato!")
+
+
+# ESERCIZIO 8
+
+# from typing import Any
+# habitat : list = ["terra", "acqua", "aria"]
+# nome_animale : str = str(input(" Inserisci un animale "))
+# animal_type : str
+
+# animalDict : dict[str , Any] = {"animale": nome_animale, "tipo" : animal_type, "habitat" : habitat}
+
+# match animalDict:
+    
+
+
+# ESERCIZIO 9
+
+# i = 0
+# countTesta: int = 0
+# countCroce: int = 0
+# while i < 8:
+
+#     lancio : str = input("Inserisci il simbolo che è uscito: T o C: ")
+    
+
+#     match lancio:
+#         case lancio if lancio == "t" or lancio == "T":
+#             countTesta += 1
+
+#         case lancio if lancio == "c" or lancio == "C":
+#             countCroce += 1
+
+#         case _:
+#             print("Non sono stati fatti lanci: ")
+#     i += 1 
+
+# print(f"Il totale delle teste è {countTesta} mentre la percentuale è {(countTesta *100)/i:.2f}%")
+# print(f"Il totale delle croci è {countCroce} mentre la percentuale è {(countCroce *100)/i:.2f}%")
+
+
+# ESERCIZIO 10
+
+# frase:str = input("Inserisci un frase: ")
+
+# match frase:
+#     case frase if len(frase)%2==0 and frase[-1]=="?":
+#         print("Si")
+#     case frase if len(frase)%2==1 and frase[-1]=="?":
+#         print("No")
+#     case frase if frase[-1]=="!":
+#         print("Wow!")
+#     case _:
+#         print(f"Tu dici {frase}")
+
