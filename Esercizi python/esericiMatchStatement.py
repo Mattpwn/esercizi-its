@@ -219,3 +219,58 @@
 #     case _:
 #         print(f"Tu dici {frase}")
 
+
+# ESERCIZIO 3C-9
+
+# point_x : int = int (input("Inserire coordinata x: "))
+# point_y : int = int (input("Inserire coordinata y: "))
+
+# coordinate : tuple = (point_x, point_y)
+
+# match coordinate:
+
+#     case coordinate if coordinate == (0 , 0):
+#         print(f"Il punto si trova nell'origine. ")
+
+#     case coordinate if coordinate == (point_x, 0):
+#         print(f"Il punto si trova sull'asse x. ")
+
+#     case coordinate if coordinate == (0, point_y):
+#         print(f"Il punto si trova nell'asse y. ")
+
+#     case coordinate if point_x > 0 and point_y > 0:
+#         print (f" Il punto si trova nel primo quadrante")   
+    
+#     case coordinate if point_x < 0 and point_y > 0:
+#         print (f" Il punto si trova nel secondo quadrante")
+    
+#     case coordinate if point_x < 0 and point_y < 0:
+#         print (f" Il punto si trova nel terzo quadrante")
+    
+#     case coordinate if point_x > 0 and point_y < 0:
+#         print (f" Il punto si trova nel quarto quadrante")
+
+
+# ESERCIZIO 3C-10
+
+
+# day:int = int (input (f" Inserire il giorno: "))
+# month:int = int (input (f" Inserire il mese: "))
+
+# date:tuple = (day, month)
+
+# match date:
+#     case (1, 1):
+#         print (f" Il 1/1 è Capodanno")
+#     case (14, 2):
+#         print (f" Il 14/02 è San Valentino")
+#     case (2, 6):
+#         print (f" Il 2/6 è la Festa della Repubblica Italiana")
+#     case (15, 8):
+#         print (f" Il 15/8 è Ferragosto")
+#     case (31, 10):
+#         print (f" Il 31/10 è Halloween")
+#     case (25, 12):
+#         print (f" Il 25/12 è Natale")
+#     case _:
+#         print (f" Nessuna festività importante in questa data")
