@@ -49,3 +49,7 @@
 
 # ESERCIZIO 8.7
 
+def make_albun(artist_name:str , album_name:str , number_songs:int = None):
+    
+
+    return (f" {artist_name} ")
