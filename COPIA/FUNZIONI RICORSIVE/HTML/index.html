@@ -1,0 +1,61 @@
+<!-- html è un linguaggio -->
+ <!-- CSS è un linguaggio garfico -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- per richiamare un file all'interno di questo -->
+    <link href = "miostile.css" rel = "stylesheet"> 
+     <!-- classe personalizzata che posso richiamare quando voglio la classe viene sempre definita o in un blocco o in un file esterno -->
+<style>
+
+    h1 {
+        color : green;
+    }
+
+    div{
+        color : blue;
+    }
+      
+    .paperino {               
+        color : yellow;
+    }
+
+    .test {
+        color : purple;
+    }
+</style>
+
+</head>
+<body>
+
+    <!-- foglio di stile a cascata
+     può eseesre scritto in 3 modi:
+     inline      DENTRO il tag               attributo style
+     blocco       nella pagina dell'head     tag style
+     file esterno   file .css
+      -->
+
+    <!-- HTML -->
+
+    <h1> <font color = "purple" > Titolo del sito</font></h1>
+    
+    <!-- CSS ... pulizia.. -->
+    <!-- 2 attributi.... style e class -->
+
+    <h1 style="color : red"> TITOLO DEL TESTO</h1>
+    <div class = "paperino"> mio div</div>
+    <div class ="pluto"> GOD DAMN</div>
+    <div class = "pluto pippo" style = "color : black"> mio secondo div </div>
+
+    <h1 class = "pippo pluto test"
+        style = "padding: 40px;
+        margin : 10px; 
+        border : 10px orange solid; 
+        border-radius : 40px;" > 
+        DIO È UN ANIMALACCIO</h1>
+</body>
+</html>
