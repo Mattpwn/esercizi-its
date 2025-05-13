@@ -1,11 +1,11 @@
 
 def primo(n:int) -> bool:
 
-    while n != 1:
+    for i in range (n-1, 1, -1):
 
-        if n % n == 0 and n % 1 == 0:
+        if n% i == 0:
+            return False
+    
+    return True 
 
-            return True
-        
-
-
+print(primo(7))
