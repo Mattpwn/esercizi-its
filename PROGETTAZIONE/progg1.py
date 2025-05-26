@@ -30,31 +30,31 @@ class Voto (int):
 
         return (Voto)
     
-    class Indirizzo:
+class Indirizzo:
 
-        _via: str
-        _civico : int
+    _via: str
+    _civico : int
 
-        def __init__ (self, via: str, civico: int) -> None:
+    def __init__ (self, via: str, civico: int) -> None:
 
-            self._via = via
-            self._civico = civico
+        self._via = via
+        self._civico = civico
 
-        def via(self) -> str:
-            return self._via
+    def via(self) -> str:
+        return self._via
         
-        def civico(self) -> int:
-            return self._civico
+    def civico(self) -> int:
+        return self._civico
         
-        def __hash__ (self) -> int:
-            return hash(self._via, self._civico)
+    def __hash__ (self) -> int:
+        return hash(self._via, self._civico)
         
-        def __eq__ (self, other:Any) -> bool:
+    def __eq__ (self, other:Any) -> bool:
             
-            if other is None or \
-                    not isinstance (other, type(self)) or \
-                    hash(self) != hash(other):
-                return False
-            return self._via == other._via and self._civico == other._civico
+        if other is None or \
+                not isinstance (other, type(self)) or \
+                hash(self) != hash(other):
+            return False
+        return self._via == other._via and self._civico == other._civico    
 
         

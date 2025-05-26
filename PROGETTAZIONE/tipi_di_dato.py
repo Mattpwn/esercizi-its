@@ -135,3 +135,15 @@ class CodiceFiscaleBrutto:
             self.cf = cff
         else:
             raise ValueError (f"La stringa '{cff}' non è un codice fiscale italiano valido")
+        
+class Telefono (str):
+
+    def _new_(cls, telefono: str):
+
+        if re.fullmatch(r"^\+?[1-9][0-9]{7,14}$", telefono):
+
+            return super()._new_(cls, telefono)
+        
+        else:
+
+            raise Exception("numero di telefono inserito non correttamente")

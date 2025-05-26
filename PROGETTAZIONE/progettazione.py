@@ -5,18 +5,18 @@ class Persona(object): #object super classe della classe Persona
     nome: str
     cognome: str
 
-    def _new_(cls, *args, **kwargs) -> Self:  #costruttore per personalizzare l'oggetto prima che venga inizializzato
+    def __new__(cls, *args, **kwargs) -> Self:  #costruttore per personalizzare l'oggetto prima che venga inizializzato
         return super()._new_(cls)
     
-    def _init_(self, nome:str) -> None: #inizializzatore
+    def __init__(self, nome:str) -> None: #inizializzatore
         self.nome = nome
 
-    def _eq_(self, other: Any) -> bool:
+    def __eq__(self, other: Any) -> bool:
         if not isinstance (other, type(Self)): #se other non è istanza della classe Persona, uguaglianza è falsa
             return False
         return self.nome == other.nome  #se è una persona controllo il nome
     
-    def _hash_(self) -> int:  #restituisce hash oggetto
+    def __hash__(self) -> int:  #restituisce hash oggetto
         return hash
      
         
