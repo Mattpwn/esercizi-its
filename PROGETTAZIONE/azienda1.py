@@ -64,8 +64,8 @@ class Dipartimento:
     def get_nome(self) -> str:
         return self._nome
     
-    def get_telefono(self) -> Telefono:
-        return self._telefono
+    def get_telefono(self) ->  frozenset [Telefono]:
+        return frozenset [Telefono]
     
     def get_indirizzo(self) -> Indirizzo:
         return self._indirizzo
@@ -94,16 +94,5 @@ class Progetto:
     def get_budget(self) -> RealGEZ:
         return self._budget
 
-    
 
-class Afferenza:
-
-    def init(self, data_afferenza: date):
-        self._data_afferenza:date = data_afferenza
-
-    def set_data_afferenza(self, data) -> None:
-        self._data_afferenza = data
-        
-    def get_data_afferenza(self) -> date:
-        return self._data_afferenza
 
