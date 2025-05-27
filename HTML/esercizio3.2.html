@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 3.2</title>
+</head>
+<body>
+    <div id = "età persona" > </div>
+    <div id = "anni fino a 100" > </div>
+
+    <script>
+
+        let anno_corrente = 2025
+        let anno_nascita = 2003
+
+        document.getElementById ("età persona").innerHTML = "l'età della persona è: " + (anno_corrente - anno_nascita)
+        document.getElementById ("anni fino a 100").innerHTML = "per arrivare a 100 mancano: " + (100 - (anno_corrente - anno_nascita)) +  " anni"
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 3.3</title>
+</head>
+<body>
+    <div id = "ore"> </div>
+    
+    <script>
+
+        let secondi = prompt ("inserisci numero secondi")
+        secondi = parseInt(secondi)
+        let secondo = secondi % 60
+        let minuti = ((secondi / 3600) - parseInt(secondi / 3600)) * 60
+        
+
+        document.getElementById ("ore").innerHTML = parseInt(secondi / 3600) + " ore, " + parseInt(minuti) + " minuti, " + parseInt(secondo) + " secondi"
+
+    </script>
+    
+</body>
+</html>
