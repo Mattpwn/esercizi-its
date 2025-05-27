@@ -146,4 +146,4 @@ class Telefono (str):
         
         else:
 
-            raise Exception("numero di telefono inserito non correttamente")
+            raise Exception("numero di telefono inserito non correttamente")    
