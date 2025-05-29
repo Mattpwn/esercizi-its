@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 4.1</title>
+</head>
+<body>
+
+    <div id = "tabellina"></div>
+    <div id = "tabellina1"></div>
+
+    <script>
+        // Con il ciclo for
+        let numero = prompt("Inserisci un numero: ")
+        numero = parseInt(numero)
+        let risultato = ""
+
+        for (let i = 0; i <= 10; i++) {
+
+            risultato += numero + " x " + i + " = " + (numero * i) + "<br>";
+
+            document.getElementById("tabellina").innerHTML = risultato + "<br>";
+            
+        }
+        
+        
+
+        
+        // Con ciclo while
+        
+        let numeri = prompt("Inserisci un numero: ")
+        numeri = parseInt(numeri)
+        let risultati = ""
+        let num = 1;
+        let valoreMassimo = 10;
+
+        while ( num <= valoreMassimo ){
+
+            risultati += numeri + " x " + num + " = " + (numeri * num) + "<br>";
+
+            document.getElementById("tabellina1").innerHTML = risultati;
+            
+             
+            num++;
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
