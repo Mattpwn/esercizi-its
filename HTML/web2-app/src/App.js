@@ -3,17 +3,14 @@
 import './App.css';
 
 import CambiaNome from './cambianome';
+import LoginForm from './LoginForm';
 
-function getDate(date) {
-
-  return date.toLocaleDateString()+ " " + date.toLocaleTimeString();
-}
 
 function App(){
-  let nome = "Matteo";
   return (
     <div className='App'>
     <CambiaNome></CambiaNome>
+    <LoginForm></LoginForm>
     </div>
   );
 }
