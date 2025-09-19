@@ -1,37 +1,41 @@
 class Persona:
 
+    _first_name: str
+    _last_name: str
+    _age: int
+
     def __init__ (self,first_name: str, last_name: str):
 
         if isinstance ( first_name, str):
 
-            self.__first_name = first_name
+            self._first_name = first_name
 
         else:
             print ("il nome inserito non è una stringa")
 
-            self.__first_name = None
+            self._first_name = None
 
         if isinstance (last_name, str):
 
-            self.__last_name = last_name
+            self._last_name = last_name
 
         else:
             print ("il cognome inserito non è una stringa")
 
-            self.__last_name = None
+            self._last_name = None
 
         if isinstance (first_name, str) and isinstance (last_name, str):
 
-            self.__age = 0
+            self._age = 0
 
         else: 
-            self.__age = None
+            self._age = None
 
     def setName (self, first_name: str):
           
         if isinstance ( first_name, str):
 
-            self.__first_name = first_name
+            self._first_name = first_name
         
         else:
             print("il nome inserito non è una stringa")
@@ -40,7 +44,7 @@ class Persona:
 
         if isinstance (last_name, str):
 
-            self.__last_name = last_name
+            self._last_name = last_name
 
         else:
             print ("il cognome inserito non è una stringa")
@@ -49,26 +53,26 @@ class Persona:
 
         if isinstance ( age, int):
 
-            self.__age = age
+            self._age = age
         
         else: 
             print("L'età deve essere un numero intero")
 
     def getName(self):
 
-        return self.__first_name
+        return self._first_name
     
     def getLastName (self):
 
-        return self.__last_name
+        return self._last_name
     
     def getAge (self):
 
-        return self.__age
+        return self._age
     
     def greet(self):
 
-        print(f"Ciao sono {self.__first_name} {self.__last_name}! Ho {self.__age} anni!")
+        print(f"Ciao sono {self._first_name} {self._last_name}! Ho {self._age} anni!")
 
 
 if __name__ == "__main__":

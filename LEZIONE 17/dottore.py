@@ -4,9 +4,9 @@ class Dottore(Persona):
     _specializzazione:str
     _parcella:float
     
-    def init(self, first_name:str, last_name:str,age:int, specializzazione:str, parcella:float):
-        super().init(first_name,last_name)
-        self.setAge(age)
+    def __init__(self, first_name:str, last_name:str, specializzazione:str, parcella:float):
+        super().__init__(first_name,last_name)
+        
         self.setSpecialization(specializzazione)
         self.setParcel(parcella)
 
@@ -48,11 +48,14 @@ class Dottore(Persona):
         print(f"Sono un medico {self.getSpecializzazion()}")
 
 if __name__ == "__main__":
-    dottore:Dottore = Dottore("Matteo","Argenti",22,"Ginecologo",150.3)
-    dottore.doctorGreet()
-    print(dottore.getSpecializzazion())
-    print(dottore.getParcel())
+    dottore:Dottore = Dottore("Matteo","Argenti","Ginecologo di Camilla",150.3)
+
+    dottore.setAge(31)
+    print("-------------------------------")
     dottore.isAValidDoctor()
-
-
-    
+    print("-------------------------------")
+    dottore.doctorGreet()
+    print("-------------------------------")
+    print(dottore.getSpecializzazion())
+    print("-------------------------------")
+    print(dottore.getParcel())
