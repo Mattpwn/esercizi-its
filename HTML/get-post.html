@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            padding: 50px;
+            background-color:purple;
+            border-radius:50px;
+            border:50px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+
+    </div>
+    <script>
+        const url="https://jsonplaceholder.typicode.com/posts/1";
+        const urlUsers="https://jsonplaceholder.typicode.com/users/";
+        const div = document.getElementById("a");
+        fetch(url).then(resp=>resp.json()).then(post=>{
+            console.log(post);
+            div.innerHTML= `<h2>${post.title}</h2> <p>${post.body}</p>`;
+            fetch(urlUsers + post.userId).then((resp)=>resp.json()).then((user)=>{
+                div.innerHTML += "<small>" + user.name + "</small>";
+            });
+        });
+    </script>
+</body>
+</html>
