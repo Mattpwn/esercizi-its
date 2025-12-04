@@ -1,84 +1,120 @@
+
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, FlatList, StyleSheet, Text, TextInput, View, Modal } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, TextInput, View, Modal, ScrollView, Image } from 'react-native';
+import TaskItem from './componentes/TaskItem';
 
 export default function App() {
-  const [messaggio, setMessaggio] = useState("Ciao");
-  const [visible, setVisible] = useState(false);
-  const [nome, setNome] = useState("");
-  const [openModal, setOpenModal] = useState(false);
-  const [contatore, setContatore] = useState(0);
-  const [a, setA] = useState("");
-  const [b, setB] = useState("");
+  const [tasks, setTasks] = useState([])
+  const [task, setTask] = useState("")
+  function taskInputHandler(enteredTask){
+    console.log(enteredTask);
+    setTask(enteredTask)
+  }
 
-  const somma = Number (a) + Number (b);
-
-  const dati=[
-    {id:"1", nome:"Camilla"},
-    {id:"2", nome:"Matteo"},
-    {id:"3", nome:"Luchetto"}
-  ]
+  function addTaskHandler(){
+    if (task !== ""){
+    setTasks(current =>[...current,{task, id:new Date()}]);
+    setTask("")
+    }
+  }
   return (
-    <View style={styles.container}>
-      <Text>{nome}</Text>
-      {visible && <Text>{messaggio} {visible}</Text>}
-      <TextInput placeholder = "Inserisci testo" onChangeText = {setNome} style = {styles.inputText}></TextInput>
-      <Button title = 'Cambia testo' onPress = {() => setMessaggio("Ho premuto il pulsante")}/>
-      <Button title = {visible ? "Nascondi" : "Visualizza"} onPress = {() => setVisible(!visible)} />
-        <Text>{contatore}</Text>
-        <Button title='Incrementa' onPress={()=>setContatore(current => current +1)}></Button>
-        <Button title='Decrementa' onPress={()=>setContatore(current => current -1)}></Button>
-        <Button title='Azzera' onPress={()=>setContatore(0)}></Button>
-        <TextInput
-          placeholder='Inserisci un numero'
-          onChangeText={setA}
-          style = {styles.inputText}
+    <View style={styles.appContainer}>
+      <View  style={styles.inputContainer}>
+        <TextInput 
+        style ={styles.textInput} 
+        placeholder = "Inserisci task" 
+        onChangeText={taskInputHandler}
+        value = {task}
+        
         />
-        <TextInput
-          placeholder='Inserisci un numero'
-          onChangeText={setB}
-          style = {styles.inputText}
-        />
-        <Text> {somma}</Text>
-
-      <View style = {styles.containerList}>
-      <FlatList
-      data = {dati}
-      renderItem={(dato) => <Text>{dato.item.nome}</Text>}
-      keyExtractor={(item) => item.id}
-      />
-      </View>
-      <View style={styles.containerList}>
-        <Text>Bella rega</Text>
-        <Button title='Apri' onPress={() => setOpenModal(true)}></Button>
-        <Modal visible={openModal} animationType='slide'>
-          <View>
-            <Text>non vedo l'ora di andare a casa</Text>
-            <Button title='Chiudi' onPress={() => setOpenModal(false)}></Button>
-          </View>
-        </Modal>
-      </View>
+     <Button 
+     
+     title = "Aggiungimi"
+     onPress = {addTaskHandler}
+     disabled = {task === ""}
+     ></Button>
     </View>
+    <View style={styles.goalsContainer}>
+
+      <FlatList alwaysBounceVertical = {false}
+      data = {tasks}
+      renderItem = {(itemData) => {
+        return (
+          <TaskItem></TaskItem>
+          // <View style = {styles.taskItem}>
+          //   <Text style = {styles.taskText} >{itemData.item}</Text>
+          // </View>
+        
+        );
+      }}
+      keyExtractor={(item,index) => index}
+      />
+    {/* //   <ScrollView>
+    //   {
+    //     tasks.map((t,index) => (
+    //       <View key={index} style = {styles.taskItem} >
+    //       <Text style = {styles.taskText} > {t}</Text>
+    //       </View>
+    //     ))
+    //   }
+    // </ScrollView> */}
+    </View>
+
+    {/* <View style={{ flexDirection: 'row', height: 200}}>
+      <View style={{ backgroundColor: 'red', flex:1 }} />
+      <View style={{ backgroundColor: 'white', flex:1 }} />
+      <View style={{ backgroundColor: 'green', flex: 1}} />
+    </View>
+    <View>
+        <Image></Image>
+    </View> */}
+
+    </View> 
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
+const styles = StyleSheet.create({ // fornisce auto completamento 
+  appContainer: {
     flex: 1,
     backgroundColor: 'skyblue',
+    paddingTop:50,
+    paddingHorizontal:16,
+    
+  },
+  inputContainer:{
+    flex:1,
+    flexDirection:'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal:46,
-    padding:50
+    paddingBottom: 24,
+    borderBottomWidth: 3,
+    borderColor: 'purple',
+
+    
   },
-  containerList:{
-    flex: 3,
-    backgroundColor: "skyblue",
-    alignItems: "center",
-    justifyContent: "center",
+  textInput:{
+    borderWidth: 3,
+    borderColor: 'purple',
+    width:'70%',
+    padding: 8,
   },
-  inputText:{
-    borderWidth: 1,
-    padding: 10
+  goalsContainer:{
+    flex:4,
+   
+
+  },
+  taskItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 6,
+    color: "#fff",
+    backgroundColor: '#5e0acc'
+  },
+  taskText: {
+    color: '#cccccc'
   }
+  
+ 
 });
+
