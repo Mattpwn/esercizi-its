@@ -1,8 +1,7 @@
 
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, FlatList, StyleSheet, Text, TextInput, View, Modal, ScrollView, Image } from 'react-native';
-import TaskItem from './componentes/TaskItem';
+import TaskItem from './components/TaskItem';
 
 export default function App() {
   const [tasks, setTasks] = useState([])
@@ -41,14 +40,14 @@ export default function App() {
       data = {tasks}
       renderItem = {(itemData) => {
         return (
-          <TaskItem></TaskItem>
+          <TaskItem taskItem={itemData.item}></TaskItem>
           // <View style = {styles.taskItem}>
           //   <Text style = {styles.taskText} >{itemData.item}</Text>
           // </View>
         
         );
       }}
-      keyExtractor={(item,index) => index}
+      keyExtractor={(item) => item.id}
       />
     {/* //   <ScrollView>
     //   {
